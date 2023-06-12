@@ -28,11 +28,11 @@ public class Particle {
   private void initialize() {
     var best = new double[coordenates.length];
     for (int i = 0; i < coordenates.length; i++) {
-      var x = RAND_GEN.nextDouble(MIN, MAX);
+      var x = RAND_GEN.nextDouble()*(MAX - MIN) + MIN;
 
       best[i] = x;
       coordenates[i] = x;
-      velocities[i] = RAND_GEN.nextDouble(0, MAX_VELOCITY);
+      velocities[i] = RAND_GEN.nextDouble()*(MAX_VELOCITY);
     }
     localBest.setCoordenates(Arrays.copyOf(coordenates, coordenates.length));
   }
